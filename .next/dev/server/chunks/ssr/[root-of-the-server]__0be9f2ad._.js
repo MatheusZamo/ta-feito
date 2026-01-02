@@ -147,7 +147,7 @@ const TaskHeader = ()=>{
                             }, void 0, false, {
                                 fileName: "[project]/components/task-header.tsx",
                                 lineNumber: 10,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "mt-2 text-muted-foreground",
@@ -155,19 +155,19 @@ const TaskHeader = ()=>{
                             }, void 0, false, {
                                 fileName: "[project]/components/task-header.tsx",
                                 lineNumber: 13,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/task-header.tsx",
                         lineNumber: 9,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex items-center gap-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
-                                variant: "ghost",
+                                variant: "outline",
                                 size: "icon",
                                 className: "relative",
                                 children: [
@@ -176,35 +176,35 @@ const TaskHeader = ()=>{
                                     }, void 0, false, {
                                         fileName: "[project]/components/task-header.tsx",
                                         lineNumber: 19,
-                                        columnNumber: 25
+                                        columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-accent"
+                                        className: "absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-chart-2"
                                     }, void 0, false, {
                                         fileName: "[project]/components/task-header.tsx",
                                         lineNumber: 20,
-                                        columnNumber: 25
+                                        columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/task-header.tsx",
                                 lineNumber: 18,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
-                                variant: "ghost",
+                                variant: "outline",
                                 size: "icon",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$settings$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Settings$3e$__["Settings"], {
                                     className: "h-5 w-5"
                                 }, void 0, false, {
                                     fileName: "[project]/components/task-header.tsx",
                                     lineNumber: 23,
-                                    columnNumber: 25
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/task-header.tsx",
                                 lineNumber: 22,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
                                 className: "gap-2",
@@ -214,26 +214,26 @@ const TaskHeader = ()=>{
                                     }, void 0, false, {
                                         fileName: "[project]/components/task-header.tsx",
                                         lineNumber: 26,
-                                        columnNumber: 25
+                                        columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Nova Tarefa"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/task-header.tsx",
                                 lineNumber: 25,
-                                columnNumber: 21
+                                columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/task-header.tsx",
                         lineNumber: 17,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/task-header.tsx",
                 lineNumber: 8,
-                columnNumber: 13
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "relative",
@@ -243,7 +243,7 @@ const TaskHeader = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/components/task-header.tsx",
                         lineNumber: 32,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Input"], {
                         placeholder: "Buscar tarefas...",
@@ -251,19 +251,19 @@ const TaskHeader = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/components/task-header.tsx",
                         lineNumber: 33,
-                        columnNumber: 17
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/task-header.tsx",
                 lineNumber: 31,
-                columnNumber: 13
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/task-header.tsx",
         lineNumber: 7,
-        columnNumber: 9
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
 ;

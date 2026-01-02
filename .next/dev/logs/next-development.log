@@ -4,3 +4,5 @@
 [00:09:18.711] Server  ERROR   ⨯ ReferenceError: geistSans is not defined
 [00:09:18.878] Browser ERROR   uncaughtError: ReferenceError: geistSans is not defined
 [00:18:34.232] Server  LOG     ✓ Compiled in 31ms
+[00:37:41.139] Server  LOG     ✓ Compiled in 135ms
+[00:39:03.575] Server  LOG     ✓ Compiled in 57ms
