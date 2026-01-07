@@ -7,7 +7,7 @@ const TaskHeader = () => {
     <header className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight text-balance">
+          <h1 className="text-2xl font-bold tracking-tight text-balance">
             Minhas Tarefas
           </h1>
           <p className="mt-2 text-muted-foreground">
@@ -22,7 +22,7 @@ const TaskHeader = () => {
           <Button variant="outline" size="icon">
             <Settings className="h-5 w-5" />
           </Button>
-          <Button className="gap-2">
+          <Button className="gap-2 bg-chart-2">
             <Plus className="h-4 w-4" />
             Nova Tarefa
           </Button>
