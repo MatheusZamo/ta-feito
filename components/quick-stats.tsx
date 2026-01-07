@@ -1,5 +1,6 @@
 import { Circle, CircleCheckBig, Clock } from "lucide-react"
 import { Card } from "./ui/card"
+import { Separator } from "./ui/separator"
 
 const QuickStats = () => {
   const stats = [
@@ -27,14 +28,18 @@ const QuickStats = () => {
       <h3 className="mb-4 text-md font-semibold">Resumo</h3>
       <ul className="space-y-3 px-3">
         {stats.map(stat => (
-          <li key={stat.label} className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <stat.icon className={`h-4 w-4 ${stat.color}`} />
-              <span className="text-sm text-muted-foreground">
-                {stat.label}
-              </span>
+          <li key={stat.label}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <stat.icon className={`h-4 w-4 ${stat.color}`} />
+                <span className="text-sm text-muted-foreground">
+                  {stat.label}
+                </span>
+              </div>
+
+              <span className="text-lg font-semibold">{stat.value}</span>
             </div>
-            <span className="text-lg font-semibold">{stat.value}</span>
+            <Separator />
           </li>
         ))}
       </ul>
