@@ -17,7 +17,7 @@ const SearchByPeriod = () => {
   ]
   return (
     <Card className="p-4 mt-3">
-      <h3 className="mb-4 text-sm font-semibold">Periodo</h3>
+      <h3 className="mb-4 text-md font-semibold">Periodo</h3>
       <ul className="space-y-2">
         {periods.map(period => (
           <li key={period.id}>
