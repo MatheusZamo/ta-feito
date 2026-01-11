@@ -8,7 +8,7 @@ const TaskHeader = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-balance">
-            Tá Feito
+            Minhas Tarefas
           </h1>
           <p className="mt-2 text-muted-foreground">
             Organize suas tarefas diárias, semanais, mensais e anuais
