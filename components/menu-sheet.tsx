@@ -8,7 +8,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { MenuIcon } from "lucide-react"
-import { QuickStats } from "@/components/quick-stats"
 import { SearchByPeriod } from "@/components/search-by-period"
 
 const MenuSheet = () => {
@@ -27,7 +26,6 @@ const MenuSheet = () => {
           </SheetDescription>
         </SheetHeader>
         <SearchByPeriod />
-        <QuickStats />
       </SheetContent>
     </Sheet>
   )
