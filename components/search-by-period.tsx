@@ -16,13 +16,13 @@ const SearchByPeriod = () => {
     { id: "yearly", label: "Anual", icon: CalendarClock },
   ]
   return (
-    <Card className="p-4 mt-3">
-      <h3 className="mb-4 text-md font-semibold">Periodo</h3>
+    <Card className="p-4 m-5 h-55 w-100">
+      <h3 className=" text-md font-semibold">Periodo</h3>
       <ul className="space-y-2">
         {periods.map(period => (
           <li key={period.id}>
             <Button
-              className="w-full justify-start gap-2 hover:bg-chart-2 hover:text-white"
+              className="w-full h-7 justify-start gap-2 hover:bg-chart-2 hover:text-white"
               variant="outline"
             >
               <period.icon className="h-4 w-4" />

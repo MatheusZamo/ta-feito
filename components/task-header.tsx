@@ -1,6 +1,7 @@
-import { Bell, Plus, Search, Settings } from "lucide-react"
+import { Plus, Search } from "lucide-react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
+import { MenuSheet } from "./menu-sheet"
 
 const TaskHeader = () => {
   return (
@@ -15,17 +16,11 @@ const TaskHeader = () => {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Button variant="outline" size="icon" className="relative">
-            <Bell className="h-5 w-5" />
-            <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-chart-2" />
-          </Button>
-          <Button variant="outline" size="icon">
-            <Settings className="h-5 w-5" />
-          </Button>
           <Button className="gap-2 bg-chart-2">
             <Plus className="h-4 w-4" />
             Nova Tarefa
           </Button>
+          <MenuSheet />
         </div>
       </div>
       <div className="relative">

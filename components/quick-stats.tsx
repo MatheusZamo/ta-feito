@@ -24,7 +24,7 @@ const QuickStats = () => {
     },
   ]
   return (
-    <Card className="mt-3 p-4">
+    <Card className="p-4 m-5 h-55 w-100">
       <h3 className="mb-4 text-md font-semibold">Resumo</h3>
       <ul className="space-y-3 px-3">
         {stats.map(stat => (
