@@ -1,7 +1,7 @@
-import { Plus, Search } from "lucide-react"
-import { Button } from "./ui/button"
+import { Search } from "lucide-react"
 import { Input } from "./ui/input"
-import { MenuSheet } from "./menu-sheet"
+import { ButtonDetails } from "./button-details"
+import { ButtonNewTask } from "./button-new-task"
 
 const TaskHeader = () => {
   return (
@@ -16,11 +16,8 @@ const TaskHeader = () => {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Button className="gap-2 bg-chart-2">
-            <Plus className="h-4 w-4" />
-            Nova Tarefa
-          </Button>
-          <MenuSheet />
+          <ButtonNewTask />
+          <ButtonDetails />
         </div>
       </div>
       <div className="relative">

@@ -7,28 +7,28 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { MenuIcon } from "lucide-react"
-import { SearchByPeriod } from "@/components/search-by-period"
+import { Plus } from "lucide-react"
 
-const MenuSheet = () => {
+const ButtonNewTask = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon">
-          <MenuIcon className="h-5 w-5" />
+        <Button className="gap-2 bg-chart-2">
+          <Plus className="h-4 w-4" />
+          Nova Tarefa
         </Button>
       </SheetTrigger>
       <SheetContent className="w-[90%]">
         <SheetHeader>
-          <SheetTitle>Detalhes</SheetTitle>
+          <SheetTitle className="text-2xl font-bold">Detalhes</SheetTitle>
           <SheetDescription>
             Visualize o resumo das tarefas de acordo com o periodo selecionado.
           </SheetDescription>
         </SheetHeader>
-        <SearchByPeriod />
+        <></>
       </SheetContent>
     </Sheet>
   )
 }
 
-export { MenuSheet }
+export { ButtonNewTask }
