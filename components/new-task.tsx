@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Label } from "./ui/label"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
-import { Calendar, Clock, Flag, Tag } from "lucide-react"
+import { Calendar, Clock, Flag, Hourglass, Tag } from "lucide-react"
 import {
   Select,
   SelectContent,
@@ -155,6 +155,7 @@ const NewTask = () => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="period" className="text-sm font-medium">
+              <Hourglass className="h-4 w-4 text-primary" />
               Periodo
             </Label>
             <Select
