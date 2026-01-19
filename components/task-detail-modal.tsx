@@ -45,7 +45,7 @@ const TaskDetailModal = ({ task }: TaskDetailModalProps) => {
     daily: "Diária",
     weekly: "Semanal",
     monthly: "Mensal",
-    annual: "Anual",
+    yearly: "Anual",
   }
 
   return (
