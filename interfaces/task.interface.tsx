@@ -7,5 +7,5 @@ export interface Task {
   completed: boolean
   category: string
   time: string
-  period: "daily" | "weekly" | "monthly"
+  period: "daily" | "weekly" | "monthly" | "yearly"
 }
