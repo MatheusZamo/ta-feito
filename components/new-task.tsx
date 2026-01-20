@@ -12,18 +12,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select"
-
-type Priority = "high" | "medium" | "low"
-type Period = "daily" | "weekly" | "monthly" | "yearly"
+import { SheetClose, SheetFooter } from "./ui/sheet"
+import { Button } from "./ui/button"
+import { Task } from "@/interfaces/task.interface"
 
 const NewTask = () => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
-  const [priority, setPriority] = useState<Priority>("low")
+  const [priority, setPriority] = useState<Task["priority"]>("low")
   const [category, setCategory] = useState("")
-  const [period, setPeriod] = useState<Period>("daily")
+  const [period, setPeriod] = useState<Task["period"]>("daily")
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -142,7 +142,7 @@ const NewTask = () => {
             </Label>
             <Select
               value={priority}
-              onValueChange={(value: Priority) => setPriority(value)}
+              onValueChange={(value: Task["priority"]) => setPriority(value)}
             >
               <SelectTrigger id="priority" className="h-11">
                 <SelectValue />
@@ -161,7 +161,7 @@ const NewTask = () => {
             </Label>
             <Select
               value={period}
-              onValueChange={(value: Period) => setPeriod(value)}
+              onValueChange={(value: Task["period"]) => setPeriod(value)}
             >
               <SelectTrigger id="period" className="h-11">
                 <SelectValue />
@@ -176,6 +176,14 @@ const NewTask = () => {
           </div>
         </div>
       </div>
+      <SheetFooter>
+        <Button type="submit" onSubmit={handleSubmit}>
+          Criar Tarefa
+        </Button>
+        <SheetClose asChild>
+          <Button variant="outline">Cancelar</Button>
+        </SheetClose>
+      </SheetFooter>
     </form>
   )
 }

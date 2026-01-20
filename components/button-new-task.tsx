@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -29,12 +27,6 @@ const ButtonNewTask = () => {
           </SheetDescription>
         </SheetHeader>
         <NewTask />
-        <SheetFooter>
-          <Button type="submit">Criar Tarefa</Button>
-          <SheetClose asChild>
-            <Button variant="outline">Cancelar</Button>
-          </SheetClose>
-        </SheetFooter>
       </SheetContent>
     </Sheet>
   )
