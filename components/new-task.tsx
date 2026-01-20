@@ -13,16 +13,17 @@ import {
   SelectValue,
 } from "./ui/select"
 
+type Priority = "high" | "medium" | "low"
+type Period = "daily" | "weekly" | "monthly" | "yearly"
+
 const NewTask = () => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
-  const [priority, setPriority] = useState<"high" | "medium" | "low">("low")
+  const [priority, setPriority] = useState<Priority>("low")
   const [category, setCategory] = useState("")
-  const [period, setPeriod] = useState<
-    "daily" | "weekly" | "monthly" | "yearly"
-  >("daily")
+  const [period, setPeriod] = useState<Period>("daily")
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -141,7 +142,7 @@ const NewTask = () => {
             </Label>
             <Select
               value={priority}
-              onValueChange={(value: any) => setPriority(value)}
+              onValueChange={(value: Priority) => setPriority(value)}
             >
               <SelectTrigger id="priority" className="h-11">
                 <SelectValue />
@@ -160,7 +161,7 @@ const NewTask = () => {
             </Label>
             <Select
               value={period}
-              onValueChange={(value: any) => setPeriod(value)}
+              onValueChange={(value: Period) => setPeriod(value)}
             >
               <SelectTrigger id="period" className="h-11">
                 <SelectValue />
