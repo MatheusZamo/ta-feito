@@ -14,7 +14,8 @@ import {
 } from "./ui/select"
 import { SheetClose, SheetFooter } from "./ui/sheet"
 import { Button } from "./ui/button"
-import { Task } from "@/interfaces/task.interface"
+import { Task } from "@/interfaces/task"
+import { CreateTasks } from "@/actions/create-tasks"
 
 const NewTask = () => {
   const [title, setTitle] = useState("")
@@ -29,7 +30,7 @@ const NewTask = () => {
     e.preventDefault()
 
     const newTask = {
-      id: Date.now().toString(),
+      id: Date.now(),
       title,
       description,
       date,
@@ -41,7 +42,7 @@ const NewTask = () => {
       createdAt: new Date().toISOString(),
     }
 
-    console.log(newTask)
+    CreateTasks(newTask)
 
     setTitle("")
     setDescription("")

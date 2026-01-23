@@ -1,4 +1,4 @@
-import { Task } from "@/interfaces/task.interface"
+import { Task } from "@/interfaces/task"
 import { Calendar, Flag, MoreVertical } from "lucide-react"
 import { Card } from "./ui/card"
 import { Checkbox } from "./ui/checkbox"
