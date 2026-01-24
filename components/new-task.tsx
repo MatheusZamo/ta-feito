@@ -30,7 +30,7 @@ const NewTask = () => {
     e.preventDefault()
 
     const newTask = {
-      id: Date.now(),
+      id: Date.now().toString(),
       title,
       description,
       date,
@@ -178,9 +178,11 @@ const NewTask = () => {
         </div>
       </div>
       <SheetFooter>
-        <Button type="submit" onSubmit={handleSubmit}>
-          Criar Tarefa
-        </Button>
+        <SheetClose asChild>
+          <Button type="submit" onSubmit={handleSubmit}>
+            Criar Tarefa
+          </Button>
+        </SheetClose>
         <SheetClose asChild>
           <Button variant="outline">Cancelar</Button>
         </SheetClose>
