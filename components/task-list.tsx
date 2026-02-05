@@ -1,9 +1,53 @@
-import { getTasks } from "@/actions/get-tasks"
 import { Tasks } from "./tasks"
 import { Button } from "./ui/button"
 
-const TaskList = async () => {
-  const tasksInDb = await getTasks()
+const TaskList = () => {
+  const tasksInDb = [
+    {
+      id: "a",
+      title: "Revisar apresentação do projeto",
+      description: "Verificar slides e preparar demonstração",
+      date: "Hoje, 14:00",
+      priority: "high" as const,
+      completed: false,
+      category: "Trabalho",
+      time: "14:30",
+      period: "daily" as const,
+    },
+    {
+      id: "b",
+      title: "Fazer exercícios de matemática",
+      description: "Capítulo 5 - Equações diferenciais",
+      date: "Hoje, 16:30",
+      priority: "medium" as const,
+      completed: false,
+      category: "Estudos",
+      time: "14:30",
+      period: "daily" as const,
+    },
+    {
+      id: "c",
+      title: "Comprar ingredientes para jantar",
+      description: "Lista: tomate, alface, frango, arroz",
+      date: "Hoje, 18:00",
+      priority: "low" as const,
+      completed: false,
+      category: "Pessoal",
+      time: "14:30",
+      period: "daily" as const,
+    },
+    {
+      id: "d",
+      title: "Reunião com equipe de design",
+      description: "Discutir novo layout da interface",
+      date: "Ontem, 10:00",
+      priority: "medium" as const,
+      completed: true,
+      category: "Trabalho",
+      time: "14:30",
+      period: "daily" as const,
+    },
+  ]
 
   return (
     <>
@@ -15,7 +59,7 @@ const TaskList = async () => {
           </Button>
         </div>
         <div className="space-y-3">
-          <Tasks tasks={tasksInDb.tasks} />
+          <Tasks tasks={tasksInDb} />
         </div>
       </div>
     </>

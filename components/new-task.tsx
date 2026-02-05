@@ -15,7 +15,6 @@ import {
 import { SheetClose, SheetFooter } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { Task } from "@/interfaces/task"
-import { CreateTasks } from "@/actions/create-tasks"
 
 const NewTask = () => {
   const [title, setTitle] = useState("")
@@ -42,7 +41,7 @@ const NewTask = () => {
       createdAt: new Date().toISOString(),
     }
 
-    CreateTasks(newTask)
+    console.log(newTask)
 
     setTitle("")
     setDescription("")
