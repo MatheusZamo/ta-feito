@@ -1,53 +1,32 @@
+"use client"
+
 import { Tasks } from "./tasks"
 import { Button } from "./ui/button"
+import { useEffect, useState } from "react"
+import { Task } from "@/interfaces/task"
+import localforage from "@/lib/localforage.config"
 
 const TaskList = () => {
-  const tasksInDb = [
-    {
-      id: "a",
-      title: "Revisar apresentação do projeto",
-      description: "Verificar slides e preparar demonstração",
-      date: "Hoje, 14:00",
-      priority: "high" as const,
-      completed: false,
-      category: "Trabalho",
-      time: "14:30",
-      period: "daily" as const,
-    },
-    {
-      id: "b",
-      title: "Fazer exercícios de matemática",
-      description: "Capítulo 5 - Equações diferenciais",
-      date: "Hoje, 16:30",
-      priority: "medium" as const,
-      completed: false,
-      category: "Estudos",
-      time: "14:30",
-      period: "daily" as const,
-    },
-    {
-      id: "c",
-      title: "Comprar ingredientes para jantar",
-      description: "Lista: tomate, alface, frango, arroz",
-      date: "Hoje, 18:00",
-      priority: "low" as const,
-      completed: false,
-      category: "Pessoal",
-      time: "14:30",
-      period: "daily" as const,
-    },
-    {
-      id: "d",
-      title: "Reunião com equipe de design",
-      description: "Discutir novo layout da interface",
-      date: "Ontem, 10:00",
-      priority: "medium" as const,
-      completed: true,
-      category: "Trabalho",
-      time: "14:30",
-      period: "daily" as const,
-    },
-  ]
+  const [tasks, setTasks] = useState<Task[]>([])
+
+  const loadTasks = async () => {
+    // Buscar tasks existentes do LocalForage
+    const savedTasks = await localforage.getItem<Task[]>("Tasks")
+    setTasks(savedTasks || [])
+  }
+
+  useEffect(() => {
+    loadTasks()
+    //Listener para atualizar quando criar nova task
+    const handleTasksUpdate = () => {
+      loadTasks()
+    }
+    window.addEventListener("tasksUpdated", handleTasksUpdate)
+
+    return () => {
+      window.removeEventListener("tasksUpdated", handleTasksUpdate)
+    }
+  }, [])
 
   return (
     <>
@@ -59,7 +38,7 @@ const TaskList = () => {
           </Button>
         </div>
         <div className="space-y-3">
-          <Tasks tasks={tasksInDb} />
+          <Tasks tasks={tasks} />
         </div>
       </div>
     </>

@@ -15,6 +15,7 @@ import {
 import { SheetClose, SheetFooter } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { Task } from "@/interfaces/task"
+import { createTaskInDb } from "@/actions/createTasksInDb"
 
 const NewTask = () => {
   const [title, setTitle] = useState("")
@@ -25,7 +26,7 @@ const NewTask = () => {
   const [category, setCategory] = useState("")
   const [period, setPeriod] = useState<Task["period"]>("daily")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     const newTask = {
@@ -41,15 +42,21 @@ const NewTask = () => {
       createdAt: new Date().toISOString(),
     }
 
-    console.log(newTask)
+    try {
+      await createTaskInDb(newTask)
 
-    setTitle("")
-    setDescription("")
-    setDate("")
-    setTime("")
-    setPriority("low")
-    setCategory("")
-    setPeriod("daily")
+      window.dispatchEvent(new Event("tasksUpdated"))
+
+      setTitle("")
+      setDescription("")
+      setDate("")
+      setTime("")
+      setPriority("low")
+      setCategory("")
+      setPeriod("daily")
+    } catch (erro) {
+      console.log("Erro ao criar task:", erro)
+    }
   }
   return (
     <form onSubmit={handleSubmit} className="space-y-5 m-5">
