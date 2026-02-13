@@ -9,18 +9,19 @@ import localforage from "@/lib/localforage.config"
 const TaskList = () => {
   const [tasks, setTasks] = useState<Task[]>([])
 
-  const loadTasks = async () => {
-    // Buscar tasks existentes do LocalForage
-    const savedTasks = await localforage.getItem<Task[]>("Tasks")
-    setTasks(savedTasks || [])
-  }
-
   useEffect(() => {
-    loadTasks()
-    //Listener para atualizar quando criar nova task
-    const handleTasksUpdate = () => {
-      loadTasks()
+    const loadTasks = async () => {
+      const savedTasks = await localforage.getItem<Task[]>("Tasks")
+      setTasks(savedTasks || [])
     }
+
+    // Listener para atualizar quando criar nova task
+    const handleTasksUpdate = async () => {
+      const savedTasks = await localforage.getItem<Task[]>("Tasks")
+      setTasks(savedTasks || [])
+    }
+
+    loadTasks()
     window.addEventListener("tasksUpdated", handleTasksUpdate)
 
     return () => {
