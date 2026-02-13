@@ -12,7 +12,7 @@ const TaskHeader = () => {
             Minhas Tarefas
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Organize suas tarefas diárias, semanais, mensais e anuais
+            Organize suas tarefas diárias.
           </p>
         </div>
         <div className="flex items-center gap-3">
