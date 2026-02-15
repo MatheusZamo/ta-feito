@@ -3,6 +3,7 @@ import { Calendar, Flag, MoreVertical } from "lucide-react"
 import { Card } from "./ui/card"
 import { Checkbox } from "./ui/checkbox"
 import { Button } from "./ui/button"
+import { toggleTaskCompleted } from "@/actions/updateTaskInDb"
 
 interface TaskProps {
   tasks: Task[]
@@ -14,6 +15,10 @@ const Tasks = ({ tasks }: TaskProps) => {
     medium: "text-primary",
     low: "text-muted-foreground",
   } as const
+
+  const handleToggle = async (id: string) => {
+    await toggleTaskCompleted(id)
+  }
   return (
     <>
       {tasks.map(task => (
@@ -22,7 +27,11 @@ const Tasks = ({ tasks }: TaskProps) => {
           className={`p-4 transition-all hover:shadow-md cursor-pointer ${task.completed ? "opacity-60" : ""}`}
         >
           <div className="flex items-start gap-4">
-            <Checkbox checked={task.completed} className="mt-1" />
+            <Checkbox
+              checked={task.completed}
+              className="mt-1"
+              onCheckedChange={() => handleToggle(task.id)}
+            />
             <div className="flex-1 space-y-2">
               <div className="flex items-start justify-between gap-4">
                 <div>
