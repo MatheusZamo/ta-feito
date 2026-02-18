@@ -1,9 +1,9 @@
 import { Task } from "@/interfaces/task"
-import { Calendar, Flag, MoreVertical } from "lucide-react"
+import { Calendar, Flag } from "lucide-react"
 import { Card } from "./ui/card"
 import { Checkbox } from "./ui/checkbox"
-import { Button } from "./ui/button"
 import { toggleTaskCompleted } from "@/actions/updateTaskInDb"
+import { ButtonEditTask } from "./button-edit-task"
 
 interface TaskProps {
   tasks: Task[]
@@ -19,6 +19,7 @@ const Tasks = ({ tasks }: TaskProps) => {
   const handleToggle = async (id: string) => {
     await toggleTaskCompleted(id)
   }
+
   return (
     <>
       {tasks.map(task => (
@@ -44,10 +45,7 @@ const Tasks = ({ tasks }: TaskProps) => {
                     {task.description}
                   </p>
                 </div>
-
-                <Button variant="ghost" size="icon" className="shrink-0">
-                  <MoreVertical className="h-4 w-4" />
-                </Button>
+                <ButtonEditTask id={task.id} />
               </div>
 
               <div className="flex items-center gap-4 text-sm">
