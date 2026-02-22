@@ -1,6 +1,5 @@
 import { Search } from "lucide-react"
 import { Input } from "./ui/input"
-import { ButtonDetails } from "./button-details"
 import { ButtonNewTask } from "./button-new-task"
 
 const TaskHeader = () => {
@@ -17,7 +16,6 @@ const TaskHeader = () => {
         </div>
         <div className="flex items-center gap-3">
           <ButtonNewTask />
-          <ButtonDetails />
         </div>
       </div>
       <div className="relative">
