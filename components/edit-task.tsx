@@ -97,7 +97,7 @@ const EditTask = ({ task }: EditTaskProps) => {
         <Textarea
           id="description"
           placeholder="Adicione detalhes sobre a tarefa..."
-          maxLength={50}
+          maxLength={40}
           value={description}
           onChange={e => setDescription(e.target.value)}
           rows={3}
