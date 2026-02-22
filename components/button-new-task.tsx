@@ -19,7 +19,7 @@ const ButtonNewTask = () => {
           Nova Tarefa
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-[90%]">
+      <SheetContent className="w-[90%] overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="text-2xl font-bold">Nova Tarefa</SheetTitle>
           <SheetDescription>

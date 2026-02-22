@@ -50,7 +50,7 @@ const Tasks = ({ tasks }: TaskProps) => {
 
               <div className="flex items-center gap-4 text-sm">
                 <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <Calendar className="h-3.5 w-3.5" />
+                  <Calendar className="h-3.5 w-3.5 text-primary" />
                   <span>{task.date}</span>
                 </div>
 

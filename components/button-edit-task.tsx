@@ -42,7 +42,7 @@ const ButtonEditTask = ({ id }: { id: string }) => {
           <MoreVertical className="h-4 w-4" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-[90%]">
+      <SheetContent className="w-[90%] overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="text-2xl font-bold">Editar Tarefa</SheetTitle>
           <SheetDescription>
