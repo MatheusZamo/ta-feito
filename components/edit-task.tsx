@@ -83,6 +83,7 @@ const EditTask = ({ task }: EditTaskProps) => {
           id="title"
           placeholder="Ex: Revisar apresentação do projeto"
           value={title}
+          maxLength={15}
           required
           className="h-11"
           onChange={e => setTitle(e.target.value)}
@@ -96,6 +97,7 @@ const EditTask = ({ task }: EditTaskProps) => {
         <Textarea
           id="description"
           placeholder="Adicione detalhes sobre a tarefa..."
+          maxLength={50}
           value={description}
           onChange={e => setDescription(e.target.value)}
           rows={3}
@@ -146,6 +148,7 @@ const EditTask = ({ task }: EditTaskProps) => {
             <Input
               id="category"
               placeholder="Ex: Trabalho, Lazer..."
+              maxLength={15}
               value={category}
               onChange={e => setCategory(e.target.value)}
               className="h-11"

@@ -67,6 +67,7 @@ const NewTask = () => {
         <Input
           id="title"
           placeholder="Ex: Revisar apresentação do projeto"
+          maxLength={15}
           value={title}
           required
           className="h-11"
@@ -81,6 +82,7 @@ const NewTask = () => {
         <Textarea
           id="description"
           placeholder="Adicione detalhes sobre a tarefa..."
+          maxLength={50}
           value={description}
           onChange={e => setDescription(e.target.value)}
           rows={3}
@@ -131,6 +133,7 @@ const NewTask = () => {
             <Input
               id="category"
               placeholder="Ex: Trabalho, Lazer..."
+              maxLength={15}
               value={category}
               onChange={e => setCategory(e.target.value)}
               className="h-11"
