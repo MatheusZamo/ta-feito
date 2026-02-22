@@ -16,6 +16,7 @@ import { SheetClose, SheetFooter } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { Task } from "@/interfaces/task"
 import { updateTaskInDb } from "@/actions/updateTaskInDb"
+import { deleteTaskInDb } from "@/actions/deleteTaskInDb"
 
 interface EditTaskProps {
   task: Task | null
@@ -60,6 +61,12 @@ const EditTask = ({ task }: EditTaskProps) => {
     } catch (erro) {
       console.log("Erro ao editar task:", erro)
     }
+  }
+
+  const handleDeleteTask = async () => {
+    await deleteTaskInDb(task?.id ?? "")
+    //Forçando a pagina a recaregar
+    window.dispatchEvent(new Event("tasksUpdated"))
   }
 
   if (!task) {
@@ -198,6 +205,11 @@ const EditTask = ({ task }: EditTaskProps) => {
         <SheetClose asChild>
           <Button variant="outline" type="button">
             Cancelar
+          </Button>
+        </SheetClose>
+        <SheetClose asChild>
+          <Button variant="destructive" onClick={handleDeleteTask}>
+            Excluir Tarefa
           </Button>
         </SheetClose>
       </SheetFooter>
