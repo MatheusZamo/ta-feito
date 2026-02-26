@@ -16,6 +16,7 @@ import { SheetClose, SheetFooter } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { Task } from "@/interfaces/task"
 import { createTaskInDb } from "@/actions/createTasksInDb"
+import { toast } from "sonner"
 
 const NewTask = () => {
   const [title, setTitle] = useState("")
@@ -46,6 +47,14 @@ const NewTask = () => {
       await createTaskInDb(newTask)
 
       window.dispatchEvent(new Event("tasksUpdated"))
+
+      toast.success("Tarefa Criada!", {
+        unstyled: true,
+        classNames: {
+          toast:
+            "text-primary px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+        },
+      })
 
       setTitle("")
       setDescription("")
