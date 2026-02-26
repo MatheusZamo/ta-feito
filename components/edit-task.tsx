@@ -17,6 +17,7 @@ import { Button } from "./ui/button"
 import { Task } from "@/interfaces/task"
 import { updateTaskInDb } from "@/actions/updateTaskInDb"
 import { deleteTaskInDb } from "@/actions/deleteTaskInDb"
+import { toast } from "sonner"
 
 interface EditTaskProps {
   task: Task | null
@@ -53,8 +54,15 @@ const EditTask = ({ task }: EditTaskProps) => {
       const result = await updateTaskInDb(updatedTask)
 
       if (result.success) {
-        console.log("Task atualizada com sucesso!")
         window.dispatchEvent(new Event("tasksUpdated"))
+
+        toast.success("Tarefa Atualizada!", {
+          unstyled: true,
+          classNames: {
+            toast:
+              "text-primary px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+          },
+        })
       } else {
         console.error("Erro:", result.message)
       }
