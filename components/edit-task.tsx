@@ -4,14 +4,7 @@ import { useState } from "react"
 import { Label } from "./ui/label"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
-import { Calendar, Clock, Flag, Hourglass, Tag } from "lucide-react"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select"
+import { Calendar, Clock, Tag } from "lucide-react"
 import { SheetClose, SheetFooter } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { Task } from "@/interfaces/task"
@@ -28,11 +21,7 @@ const EditTask = ({ task }: EditTaskProps) => {
   const [description, setDescription] = useState(task?.description ?? "")
   const [date, setDate] = useState(task?.date ?? "")
   const [time, setTime] = useState(task?.time ?? "")
-  const [priority, setPriority] = useState<Task["priority"]>(
-    task?.priority ?? "low"
-  )
   const [category, setCategory] = useState(task?.category ?? "")
-  const [period, setPeriod] = useState<Task["period"]>(task?.period ?? "daily")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -45,9 +34,7 @@ const EditTask = ({ task }: EditTaskProps) => {
       description,
       date,
       time,
-      priority,
       category,
-      period,
     }
 
     try {
@@ -116,6 +103,7 @@ const EditTask = ({ task }: EditTaskProps) => {
           value={description}
           onChange={e => setDescription(e.target.value)}
           rows={3}
+          required
         />
       </div>
 
@@ -150,6 +138,7 @@ const EditTask = ({ task }: EditTaskProps) => {
               value={time}
               onChange={e => setTime(e.target.value)}
               className="h-11"
+              required
             />
           </div>
           <div className="space-y-2">
@@ -167,52 +156,8 @@ const EditTask = ({ task }: EditTaskProps) => {
               value={category}
               onChange={e => setCategory(e.target.value)}
               className="h-11"
+              required
             />
-          </div>
-        </div>
-
-        <div className="flex justify-around mt-3">
-          <div className="space-y-2">
-            <Label
-              htmlFor="priority"
-              className="text-sm font-medium flex items-center gap-2"
-            >
-              <Flag className="h-4 w-4 text-primary" />
-              Prioridade
-            </Label>
-            <Select
-              value={priority}
-              onValueChange={(value: Task["priority"]) => setPriority(value)}
-            >
-              <SelectTrigger id="priority" className="h-11">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="high">Alta</SelectItem>
-                <SelectItem value="medium">Média</SelectItem>
-                <SelectItem value="low">Baixa</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="period" className="text-sm font-medium">
-              <Hourglass className="h-4 w-4 text-primary" />
-              Periodo
-            </Label>
-            <Select
-              value={period}
-              onValueChange={(value: Task["period"]) => setPeriod(value)}
-            >
-              <SelectTrigger id="period" className="h-11">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="daily">Diario</SelectItem>
-                <SelectItem value="weekly">Semanal</SelectItem>
-                <SelectItem value="monthly">Mensal</SelectItem>
-                <SelectItem value="yearly">Anual</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
         </div>
       </div>

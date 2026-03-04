@@ -4,17 +4,9 @@ import { useState } from "react"
 import { Label } from "./ui/label"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
-import { Calendar, Clock, Flag, Hourglass, Tag } from "lucide-react"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select"
+import { Calendar, Clock, Tag } from "lucide-react"
 import { SheetClose, SheetFooter } from "./ui/sheet"
 import { Button } from "./ui/button"
-import { Task } from "@/interfaces/task"
 import { createTaskInDb } from "@/actions/createTasksInDb"
 import { toast } from "sonner"
 
@@ -23,9 +15,7 @@ const NewTask = () => {
   const [description, setDescription] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
-  const [priority, setPriority] = useState<Task["priority"]>("low")
   const [category, setCategory] = useState("")
-  const [period, setPeriod] = useState<Task["period"]>("daily")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -36,9 +26,7 @@ const NewTask = () => {
       description,
       date,
       time,
-      priority,
       category,
-      period,
       completed: false,
       createdAt: new Date().toISOString(),
     }
@@ -60,9 +48,7 @@ const NewTask = () => {
       setDescription("")
       setDate("")
       setTime("")
-      setPriority("low")
       setCategory("")
-      setPeriod("daily")
     } catch (erro) {
       console.log("Erro ao criar task:", erro)
     }
@@ -95,6 +81,7 @@ const NewTask = () => {
           value={description}
           onChange={e => setDescription(e.target.value)}
           rows={3}
+          required
         />
       </div>
 
@@ -129,6 +116,7 @@ const NewTask = () => {
               value={time}
               onChange={e => setTime(e.target.value)}
               className="h-11"
+              required
             />
           </div>
           <div className="space-y-2">
@@ -146,52 +134,8 @@ const NewTask = () => {
               value={category}
               onChange={e => setCategory(e.target.value)}
               className="h-11"
+              required
             />
-          </div>
-        </div>
-
-        <div className="flex justify-around mt-3">
-          <div className="space-y-2">
-            <Label
-              htmlFor="priority"
-              className="text-sm font-medium flex items-center gap-2"
-            >
-              <Flag className="h-4 w-4 text-primary" />
-              Prioridade
-            </Label>
-            <Select
-              value={priority}
-              onValueChange={(value: Task["priority"]) => setPriority(value)}
-            >
-              <SelectTrigger id="priority" className="h-11">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="high">Alta</SelectItem>
-                <SelectItem value="medium">Média</SelectItem>
-                <SelectItem value="low">Baixa</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="period" className="text-sm font-medium">
-              <Hourglass className="h-4 w-4 text-primary" />
-              Periodo
-            </Label>
-            <Select
-              value={period}
-              onValueChange={(value: Task["period"]) => setPeriod(value)}
-            >
-              <SelectTrigger id="period" className="h-11">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="daily">Diario</SelectItem>
-                <SelectItem value="weekly">Semanal</SelectItem>
-                <SelectItem value="monthly">Mensal</SelectItem>
-                <SelectItem value="yearly">Anual</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
         </div>
       </div>
