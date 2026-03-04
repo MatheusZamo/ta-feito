@@ -73,6 +73,13 @@ const EditTask = ({ task }: EditTaskProps) => {
 
   const handleDeleteTask = async () => {
     await deleteTaskInDb(task?.id ?? "")
+    toast.error("Tarefa Deletada!", {
+      unstyled: true,
+      classNames: {
+        toast:
+          "text-white bg-red-700 px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+      },
+    })
     //Forçando a pagina a recaregar
     window.dispatchEvent(new Event("tasksUpdated"))
   }
