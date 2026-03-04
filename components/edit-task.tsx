@@ -60,7 +60,7 @@ const EditTask = ({ task }: EditTaskProps) => {
           unstyled: true,
           classNames: {
             toast:
-              "text-white bg-primary px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+              "text-white bg-chart-2 px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
           },
         })
       } else {
@@ -211,7 +211,9 @@ const EditTask = ({ task }: EditTaskProps) => {
       </div>
       <SheetFooter>
         <SheetClose asChild>
-          <Button type="submit">Salvar Alterações</Button>
+          <Button type="submit" className="bg-chart-2">
+            Salvar Alterações
+          </Button>
         </SheetClose>
         <SheetClose asChild>
           <Button variant="outline" type="button">

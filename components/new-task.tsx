@@ -52,7 +52,7 @@ const NewTask = () => {
         unstyled: true,
         classNames: {
           toast:
-            "text-white bg-primary  px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+            "text-white bg-chart-2  px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
         },
       })
 
