@@ -21,7 +21,7 @@ const Tasks = ({ tasks }: TaskProps) => {
         return (
           <Card
             key={task.id}
-            className={`p-4 transition-all hover:shadow-md cursor-pointer overflow-hidden ${task.completed ? "opacity-60" : ""}`}
+            className={`p-4 transition-all hover:shadow-md cursor-pointer overflow-hidden lg:w-95 ${task.completed ? "opacity-60" : ""}`}
           >
             <div className="flex items-start gap-4">
               <Checkbox
