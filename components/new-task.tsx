@@ -10,7 +10,11 @@ import { Button } from "./ui/button"
 import { createTaskInDb } from "@/actions/createTasksInDb"
 import { toast } from "sonner"
 
-const NewTask = () => {
+interface NewTaskProps {
+  onSuccess: () => void
+}
+
+const NewTask = ({ onSuccess }: NewTaskProps) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [date, setDate] = useState("")
@@ -40,7 +44,7 @@ const NewTask = () => {
         unstyled: true,
         classNames: {
           toast:
-            "text-white bg-chart-2  px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+            "text-white bg-chart-2 px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
         },
       })
 
@@ -49,10 +53,20 @@ const NewTask = () => {
       setDate("")
       setTime("")
       setCategory("")
+
+      onSuccess() // fecha o sheet apenas no sucesso
     } catch (erro) {
       console.log("Erro ao criar task:", erro)
+      toast.error("Erro ao criar tarefa!", {
+        unstyled: true,
+        classNames: {
+          toast:
+            "text-white bg-destructive px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+        },
+      })
     }
   }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5 m-5">
       <div className="space-y-2">
@@ -139,12 +153,9 @@ const NewTask = () => {
           </div>
         </div>
       </div>
+
       <SheetFooter>
-        <SheetClose asChild>
-          <Button type="submit" onSubmit={handleSubmit}>
-            Criar Tarefa
-          </Button>
-        </SheetClose>
+        <Button type="submit">Criar Tarefa</Button>
         <SheetClose asChild>
           <Button variant="outline">Cancelar</Button>
         </SheetClose>
@@ -152,4 +163,5 @@ const NewTask = () => {
     </form>
   )
 }
+
 export { NewTask }

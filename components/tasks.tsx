@@ -13,7 +13,6 @@ const Tasks = ({ tasks }: TaskProps) => {
   const handleToggle = async (id: string) => {
     await toggleTaskCompleted(id)
   }
-
   return (
     <>
       {tasks.map(task => {

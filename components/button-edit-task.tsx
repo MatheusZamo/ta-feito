@@ -17,13 +17,11 @@ const ButtonEditTask = ({ id }: { id: string }) => {
   const [task, setTask] = useState<Task | null>(null)
   const [open, setOpen] = useState(false)
 
-  // ✅ Busca os dados apenas quando o Sheet abre
   const handleOpenChange = async (isOpen: boolean) => {
     setOpen(isOpen)
 
     if (isOpen) {
       const tasks = await localforage.getItem<Task[]>("Tasks")
-
       if (tasks) {
         const found = tasks.find(task => task.id === id)
         setTask(found ?? null)
@@ -49,7 +47,7 @@ const ButtonEditTask = ({ id }: { id: string }) => {
             Faça a edição necessaria na sua tarefa.
           </SheetDescription>
         </SheetHeader>
-        <EditTask key={task?.id} task={task} />
+        <EditTask key={task?.id} task={task} onSuccess={() => setOpen(false)} />
       </SheetContent>
     </Sheet>
   )

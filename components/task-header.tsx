@@ -1,8 +1,22 @@
+"use client"
+
 import { Search } from "lucide-react"
 import { Input } from "./ui/input"
 import { ButtonNewTask } from "./button-new-task"
 
-const TaskHeader = () => {
+interface TaskHeaderProps {
+  searchValue: string
+  onSearchChange: (value: string) => void
+}
+
+const TaskHeader = ({ searchValue, onSearchChange }: TaskHeaderProps) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onSearchChange(e.target.value)
+    window.dispatchEvent(
+      new CustomEvent("taskSearch", { detail: e.target.value })
+    )
+  }
+
   return (
     <header className="space-y-6">
       <div className="flex items-center justify-between">
@@ -20,7 +34,12 @@ const TaskHeader = () => {
       </div>
       <div className="relative">
         <Search className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-        <Input placeholder="Buscar tarefas..." className="p-5 h-12 bg-card" />
+        <Input
+          placeholder="Buscar tarefas..."
+          className="p-5 h-12 bg-card"
+          value={searchValue}
+          onChange={handleSearch}
+        />
       </div>
     </header>
   )
