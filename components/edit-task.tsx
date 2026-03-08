@@ -14,9 +14,10 @@ import { toast } from "sonner"
 
 interface EditTaskProps {
   task: Task | null
+  onSuccess: () => void
 }
 
-const EditTask = ({ task }: EditTaskProps) => {
+const EditTask = ({ task, onSuccess }: EditTaskProps) => {
   const [title, setTitle] = useState(task?.title ?? "")
   const [description, setDescription] = useState(task?.description ?? "")
   const [date, setDate] = useState(task?.date ?? "")
@@ -50,11 +51,20 @@ const EditTask = ({ task }: EditTaskProps) => {
               "text-white bg-chart-2 px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
           },
         })
+
+        onSuccess() // fecha o sheet apenas no sucesso
       } else {
         console.error("Erro:", result.message)
       }
     } catch (erro) {
       console.log("Erro ao editar task:", erro)
+      toast.error("Erro ao atualizar tarefa!", {
+        unstyled: true,
+        classNames: {
+          toast:
+            "text-white bg-destructive px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
+        },
+      })
     }
   }
 
@@ -67,8 +77,8 @@ const EditTask = ({ task }: EditTaskProps) => {
           "text-white bg-red-700 px-4 py-3 rounded-lg flex items-center gap-2 shadow-md",
       },
     })
-    //Forçando a pagina a recaregar
     window.dispatchEvent(new Event("tasksUpdated"))
+    onSuccess() // fecha o sheet após deletar
   }
 
   if (!task) {
@@ -161,22 +171,19 @@ const EditTask = ({ task }: EditTaskProps) => {
           </div>
         </div>
       </div>
+
       <SheetFooter>
-        <SheetClose asChild>
-          <Button type="submit" className="bg-chart-2">
-            Salvar Alterações
-          </Button>
-        </SheetClose>
+        <Button type="submit" className="bg-chart-2">
+          Salvar Alterações
+        </Button>
         <SheetClose asChild>
           <Button variant="outline" type="button">
             Cancelar
           </Button>
         </SheetClose>
-        <SheetClose asChild>
-          <Button variant="destructive" onClick={handleDeleteTask}>
-            Excluir Tarefa
-          </Button>
-        </SheetClose>
+        <Button variant="destructive" type="button" onClick={handleDeleteTask}>
+          Excluir Tarefa
+        </Button>
       </SheetFooter>
     </form>
   )
