@@ -1,6 +1,7 @@
 "use client"
 
 import { Tasks } from "./tasks"
+import { TaskHeader } from "./task-header"
 import { Button } from "./ui/button"
 import { useEffect, useState } from "react"
 import { Task } from "@/interfaces/task"
@@ -21,21 +22,25 @@ const TaskList = () => {
       setTasks(savedTasks || [])
     }
 
-    const handleSearch = (e: Event) => {
-      setSearch((e as CustomEvent<string>).detail)
-    }
-
     loadTasks()
     window.addEventListener("tasksUpdated", handleTasksUpdate)
-    window.addEventListener("taskSearch", handleSearch)
 
     return () => {
       window.removeEventListener("tasksUpdated", handleTasksUpdate)
-      window.removeEventListener("taskSearch", handleSearch)
     }
   }, [])
 
+  const handleSearchChange = (value: string) => {
+    setSearch(value)
+  }
+
+  const handleVerTodas = () => {
+    setSearch("")
+    window.dispatchEvent(new CustomEvent("taskSearch", { detail: "" }))
+  }
+
   const filteredTasks = tasks.filter(task => {
+    if (!search) return true
     const query = search.toLowerCase()
     return (
       task.title.toLowerCase().includes(query) ||
@@ -43,12 +48,21 @@ const TaskList = () => {
     )
   })
 
+  const isSearching = search.length > 0
+
   return (
     <>
+      <TaskHeader searchValue={search} onSearchChange={handleSearchChange} />
       <div className="space-y-4 mt-3">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold">Tarefas</h2>
-          <Button variant="outline" size="sm">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={isSearching ? handleVerTodas : undefined}
+            disabled={!isSearching}
+            className={!isSearching ? "opacity-40 cursor-not-allowed" : ""}
+          >
             Ver todas
           </Button>
         </div>

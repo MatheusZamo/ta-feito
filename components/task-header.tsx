@@ -4,8 +4,14 @@ import { Search } from "lucide-react"
 import { Input } from "./ui/input"
 import { ButtonNewTask } from "./button-new-task"
 
-const TaskHeader = () => {
+interface TaskHeaderProps {
+  searchValue: string
+  onSearchChange: (value: string) => void
+}
+
+const TaskHeader = ({ searchValue, onSearchChange }: TaskHeaderProps) => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onSearchChange(e.target.value)
     window.dispatchEvent(
       new CustomEvent("taskSearch", { detail: e.target.value })
     )
@@ -31,6 +37,7 @@ const TaskHeader = () => {
         <Input
           placeholder="Buscar tarefas..."
           className="p-5 h-12 bg-card"
+          value={searchValue}
           onChange={handleSearch}
         />
       </div>
