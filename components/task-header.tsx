@@ -3,6 +3,7 @@
 import { Search } from "lucide-react"
 import { Input } from "./ui/input"
 import { ButtonNewTask } from "./button-new-task"
+import { ThemeToggle } from "./theme-toggle"
 
 interface TaskHeaderProps {
   searchValue: string
@@ -29,6 +30,7 @@ const TaskHeader = ({ searchValue, onSearchChange }: TaskHeaderProps) => {
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <ButtonNewTask />
         </div>
       </div>
