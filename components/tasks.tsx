@@ -14,13 +14,13 @@ const Tasks = ({ tasks }: TaskProps) => {
     await toggleTaskCompleted(id)
   }
   return (
-    <>
+    <div className="contents">
       {tasks.map(task => {
         const dataFormatting = task.date.split("-").reverse().join("-")
         return (
           <Card
             key={task.id}
-            className={`p-4 transition-all hover:shadow-md cursor-pointer overflow-hidden lg:w-95 ${task.completed ? "opacity-60" : ""}`}
+            className={`p-4 transition-all hover:shadow-md cursor-pointer overflow-hidden lg:w-[calc(33.333%-8px)] ${task.completed ? "opacity-60" : ""}`}
           >
             <div className="flex items-start gap-4">
               <Checkbox
@@ -64,7 +64,7 @@ const Tasks = ({ tasks }: TaskProps) => {
           </Card>
         )
       })}
-    </>
+    </div>
   )
 }
 
