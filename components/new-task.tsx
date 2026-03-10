@@ -76,7 +76,7 @@ const NewTask = ({ onSuccess }: NewTaskProps) => {
         <Input
           id="title"
           placeholder="Ex: Revisar apresentação do projeto"
-          maxLength={15}
+          maxLength={25}
           value={title}
           required
           className="h-11"
