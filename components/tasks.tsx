@@ -14,7 +14,7 @@ const Tasks = ({ tasks }: TaskProps) => {
     await toggleTaskCompleted(id)
   }
   return (
-    <div className="contents">
+    <>
       {tasks.map(task => {
         const dataFormatting = task.date.split("-").reverse().join("-")
         return (
@@ -64,7 +64,7 @@ const Tasks = ({ tasks }: TaskProps) => {
           </Card>
         )
       })}
-    </div>
+    </>
   )
 }
 

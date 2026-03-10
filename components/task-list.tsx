@@ -66,7 +66,7 @@ const TaskList = () => {
             Ver todas
           </Button>
         </div>
-        <div className="space-y-3 lg:flex lg:flex-wrap lg:gap-3">
+        <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap">
           <Tasks tasks={filteredTasks} />
         </div>
       </div>
