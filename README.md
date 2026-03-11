@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>✅ Tá Feito</h1>
+<img width="1365" height="553" alt="Image" src="https://github.com/user-attachments/assets/c59b3f18-089f-4120-9611-3f5d88a1f3d6" />
 
 <p>Aplicação de gerenciamento de tarefas diárias, simples, rápida e sem necessidade de cadastro.</p>
 
@@ -32,6 +32,7 @@ O **Tá Feito** é uma aplicação web de to-do list focada em produtividade di�
 - 🔍 **Filtro de busca** por título ou descrição em tempo real
 - 💾 **Persistência local** via LocalForage (sem necessidade de backend)
 - 🔔 **Notificações toast** para todas as ações do usuário
+- 🌗 **Tema claro/escuro** com alternância via botão e persistência da preferência
 
 ---
 
